@@ -29,8 +29,11 @@ const Navbar = () => {
         {user ? (
           <>
             <Link className="main-nav-item" to="/user">
-              <i className="fa fa-user-circle"></i>
-              {user.firstName}
+              <i
+                className="fa fa-user-circle"
+                style={{ paddingRight: "5px", marginLeft: "5px" }}
+              ></i>
+              {user.userName}
             </Link>
             <span
               className="main-nav-item"

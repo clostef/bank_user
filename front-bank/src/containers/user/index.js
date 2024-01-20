@@ -1,7 +1,19 @@
 import { useSelector } from "react-redux";
+import EditUser from "./edit-user";
+import { useState } from "react";
+import { setEditUserVisibility, isEditUserVisible } from "react";
 
 const User = () => {
   const user = useSelector((state) => state.user.infos);
+  const [isEditUserVisible, setEditUserVisibility] = useState(false);
+
+  const handleEditButtonClick = () => {
+    setEditUserVisibility(true);
+  };
+
+  const handleCloseButtonClick = () => {
+    setEditUserVisibility(false);
+  };
 
   return (
     <main className="main bg-dark">
@@ -11,7 +23,13 @@ const User = () => {
           <br />
           {user?.firstName} {user?.lastName}!
         </h1>
-        <button className="edit-button">Edit Name</button>
+        {isEditUserVisible ? (
+          <EditUser onClose={handleCloseButtonClick} />
+        ) : (
+          <button className="edit-button" onClick={handleEditButtonClick}>
+            Edit name
+          </button>
+        )}
       </div>
       <h2 className="sr-only">Accounts</h2>
       <section className="account">

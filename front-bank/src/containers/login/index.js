@@ -40,10 +40,9 @@ const Login = () => {
 
       const loginResponse = await response.json();
       const token = loginResponse.body.token;
-      // save token store
+
       dispatch(setToken(token));
 
-      // get user info
       try {
         const response2 = await fetch(
           "http://localhost:3001/api/v1/user/profile",
@@ -56,7 +55,7 @@ const Login = () => {
           }
         );
 
-        if (!response.ok) {
+        if (!response2.ok) {
           alert("l'utilisateur n'a pas été trouvé");
           return;
         }
