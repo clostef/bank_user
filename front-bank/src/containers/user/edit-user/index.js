@@ -13,7 +13,7 @@ const EditUser = ({ onClose }) => {
     event.preventDefault();
     onClose();
   };
-  const handleSave = async (event) => {
+  const handleSaveClick = async (event) => {
     event.preventDefault();
 
     if (!editedUserName) {
@@ -89,7 +89,7 @@ const EditUser = ({ onClose }) => {
         />
       </div>
       <div className="actions-edit">
-        <button className="edit-button" type="submit" onClick={handleSave}>
+        <button className="edit-button" type="submit" onClick={handleSaveClick}>
           Save
         </button>
         <button className="edit-button" onClick={handleCancelClick}>

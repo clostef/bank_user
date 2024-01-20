@@ -18,13 +18,13 @@ const Navbar = () => {
 
   return (
     <nav className="main-nav">
-      <a className="main-nav-logo" href="./index.html">
+      <Link className="main-nav-logo" to="/">
         <img
           className="main-nav-logo-image"
           src={iconUser}
           alt="Argent Bank Logo"
         />
-      </a>
+      </Link>
       <div>
         {user ? (
           <>

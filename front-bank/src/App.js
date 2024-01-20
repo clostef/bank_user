@@ -5,6 +5,8 @@ import Footer from "./containers/footer";
 import Login from "./containers/login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import User from "./containers/user";
+import GuardLogin from "./guards/login";
+import GuardUser from "./guards/user";
 
 function App() {
   return (
@@ -13,8 +15,12 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="login" element={<Login />} />
-          <Route path="user" element={<User />} />
+          <Route exact path="/login" element={<GuardLogin />}>
+            <Route exact path="/login" element={<Login />} />
+          </Route>
+          <Route exact path="/user" element={<GuardUser />}>
+            <Route exact path="/user" element={<User />} />
+          </Route>
         </Routes>
       </BrowserRouter>
       <Footer />
