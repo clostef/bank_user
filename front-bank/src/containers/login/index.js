@@ -25,14 +25,14 @@ const Login = () => {
 
   const connected = async (e) => {
     e.preventDefault();
-    console.log("email", data);
+
     try {
       const response = await fetch("http://localhost:3001/api/v1/user/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      console.log(response);
+
       if (!response.ok) {
         alert("l'utilisateur n'a pas été trouvé");
         return;

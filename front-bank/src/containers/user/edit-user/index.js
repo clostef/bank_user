@@ -40,15 +40,12 @@ const EditUser = ({ onClose }) => {
       }
 
       const editResponse = await response.json();
-      console.log(editResponse);
 
       dispatch(setUser({ ...user, userName: editedUserName }));
 
       alert("username sauvegardé");
       onClose();
     } catch (e) {}
-
-    console.log("New username:", editedUserName);
   };
 
   const handleUserNameChange = (event) => {
