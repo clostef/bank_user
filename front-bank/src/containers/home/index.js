@@ -1,7 +1,7 @@
 import "./style.css";
-import iconChat from "../../assets/img/icon-chat.png";
-import iconMoney from "../../assets/img/icon-money.png";
-import iconSecurity from "../../assets/img/icon-security.png";
+import iconChat from "../../assets/img/icon-chat.avif";
+import iconMoney from "../../assets/img/icon-money.avif";
+import iconSecurity from "../../assets/img/icon-security.avif";
 import "font-awesome/css/font-awesome.min.css";
 
 const Home = () => (
