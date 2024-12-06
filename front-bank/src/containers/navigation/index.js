@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import iconUser from "../../assets/img/argentBankLogo.png";
+import iconUser from "../../assets/img/argentBankLogo.avif";
 import { useSelector, useDispatch } from "react-redux";
 import { setToken, setUser } from "../../store/userSlice";
 import { useNavigate } from "react-router-dom";
