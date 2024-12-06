@@ -80,7 +80,7 @@ const Login = () => {
         <h1>Sign In</h1>
         <form>
           <div className="input-wrapper">
-            <label>Username</label>
+            <label htmlFor="email">Email</label>
             <input
               type="text"
               id="email"
@@ -89,7 +89,7 @@ const Login = () => {
             />
           </div>
           <div className="input-wrapper">
-            <label>Password</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               id="password"
@@ -99,7 +99,7 @@ const Login = () => {
           </div>
           <div className="input-remember">
             <input type="checkbox" id="remember-me" />
-            <label>Remember me</label>
+            <label htmlFor="remember-me">Remember me</label>
           </div>
           <button className="sign-in-button" onClick={connected}>
             Sign In
