@@ -39,8 +39,6 @@ const EditUser = ({ onClose }) => {
         return;
       }
 
-      const editResponse = await response.json();
-
       dispatch(setUser({ ...user, userName: editedUserName }));
 
       alert("username sauvegardé");

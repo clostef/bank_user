@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import EditUser from "./edit-user";
 import { useState } from "react";
-import { setEditUserVisibility, isEditUserVisible } from "react";
 
 const User = () => {
   const user = useSelector((state) => state.user.infos);
