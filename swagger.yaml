@@ -65,11 +65,9 @@ paths:
         - User Module
       summary: User Profile API
       description: API for fetching a user profile
-      #produces:
-      # - application/json
       responses:
         "200":
-          description: User profile retrieved successully
+          description: User profile retrieved successfully
           schema:
             $ref: "#/definitions/ApiResponse"
         "400":
@@ -94,14 +92,13 @@ paths:
         - application/json
       responses:
         "200":
-          description: User profile retrieved successully
+          description: User profile updated successfully
           schema:
             $ref: "#/definitions/ApiResponse"
         "400":
           description: Invalid Fields
         "500":
           description: Internal Server Error
-
   /user/accounts:
     get:
       security:
@@ -130,7 +127,6 @@ paths:
           description: Unauthorized
         "500":
           description: Internal Server Error
-
   /user/account/{id}:
     get:
       security:
@@ -187,7 +183,27 @@ paths:
           description: User account not found
         "500":
           description: Internal Server Error
-
+  /user/transactions/month:
+    get:
+      security:
+        - Bearer: []
+      tags:
+        - Transactions Module
+      summary: Get Current Month Transactions
+      description: API for fetching all transactions for the current month
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Transactions retrieved successfully
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Transaction"
+        "401":
+          description: Unauthorized
+        "500":
+          description: Internal Server Error
   /user/account/{id}/transaction/{idTransaction}/category:
     put:
       security:
@@ -228,7 +244,6 @@ paths:
           description: User account or transaction not found
         "500":
           description: Internal Server Error
-
   /user/account/{id}/transaction/{idTransaction}/note:
     put:
       security:
